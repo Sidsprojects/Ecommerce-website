@@ -1,0 +1,50 @@
+.Hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: calc(100vh - 20vh);
+    margin: 20px 0px;
+    position: relative;
+    top: 70px;
+    box-shadow: 3px 5px 14px black;
+}
+
+.Hero>video {
+    width: 100vw;
+    height: calc(100vh - 20vh);
+    object-fit: cover;
+}
+
+.overlay-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 100vw;
+    height: calc(100vh - 20vh);
+    justify-content: center;
+    align-items: flex-start;
+    /* z-index: 1; */
+}
+
+.content {
+    width: 300px;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.btn {
+    background-color: black;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}

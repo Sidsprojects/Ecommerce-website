@@ -1,0 +1,84 @@
+footer {
+    margin-top: 10vmax;
+    padding: 2vmax;
+    background-color: rgb(234, 234, 234);
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    font-family: "Roboto";
+    filter: invert(1);
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  .leftFooter {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+  }
+  .leftFooter .cols{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 12px;
+  }
+  .leftFooter .cols .col{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    list-style: none;
+    text-decoration: none;
+    justify-content: flex-start;
+    height: 100px;
+  }
+  .leftFooter .cols .col a{
+    text-decoration: none;
+    color: #5c5a5a;
+  }
+  .leftFooter .cols .col a:hover{
+    text-decoration: none;
+    color: #000000;
+  }
+  .leftFooter .cols .col h3{
+    margin-bottom: 10px;
+  }
+  .midFooter {
+    width: 60%;
+  
+    text-align: center;
+  }
+  
+  .midFooter > h1 {
+    font-size: 4vmax;
+    font-family: "Teko";
+    color: #000000;
+  }
+  .midFooter > p {
+    max-width: 60%;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    margin: 1vmax auto;
+  }
+  
+  .rightFooter {
+    width: 20%;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .rightFooter .icons h4 {
+    font-family: "Roboto";
+    font-size: 1.4vmax;
+    text-decoration: underline;
+  }
+  .rightFooter .icons a img{
+    width: 20px;
+    height: 20px;
+    margin: 8px;
+  }
+  
