@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="Navbar">
         <div className="complete-logo">
           <img
-            src="../src/assets/white-logo-2.jpg"
+            src="../src/assets/white-logo1.png"
             alt="armentia-logo"
             width={60}
             height={45}
