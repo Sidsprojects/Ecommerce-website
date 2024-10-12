@@ -14,8 +14,9 @@ exports.createProduct = catchasyncerrors(async (req, res, next) => {
 });
 
 //Get all products
-exports.getAllProducts = catchasyncerrors(async (req, res) => {
-  const resultsPerPage = 10;
+exports.getAllProducts = catchasyncerrors(async (req, res,next) => {
+  // return next(new ErrorHandler("This is my temp error",500)) 
+  const resultsPerPage = 9;
   const productCount = await Product.countDocuments();
   const apiFeatures = new ApiFeatures(Product.find(), req.query)
     .search()
@@ -26,6 +27,8 @@ exports.getAllProducts = catchasyncerrors(async (req, res) => {
   res.status(200).json({
     success: true,
     products,
+    productCount,
+    resultsPerPage,
   });
 });
 
@@ -38,7 +41,6 @@ exports.getProductDetails = catchasyncerrors(async (req, res, next) => {
   res.status(200).json({
     success: true,
     product,
-    productCount,
   });
 });
 
@@ -99,23 +101,21 @@ exports.createProductReview = catchasyncerrors(async (req, res, next) => {
 
   if (isReviewed) {
     product.reviews.forEach((rev) => {
-      if (rev.user.toString() === req.user._id.toString()) {
-        rev.rating = Number(rating);
-        rev.comment = comment;
-      }
+      if (rev.user.toString() === req.user._id.toString())
+        (rev.rating = rating), (rev.comment = comment);
     });
   } else {
     product.reviews.push(review);
     product.numOfReviews = product.reviews.length;
   }
-  // For average product rating
-  let total = 0;
 
-  total = product.reviews.forEach((rev) => {
-    total += Number(rev.rating);
+  let avg = 0;
+
+  product.reviews.forEach((rev) => {
+    avg += rev.rating;
   });
 
-  product.ratings = Number(total / product.reviews.length);
+  product.ratings = avg / product.reviews.length;
 
   await product.save({ validateBeforeSave: false });
 
@@ -151,24 +151,26 @@ exports.deleteReview = catchasyncerrors(async (req, res, next) => {
     );
   }
   // here the req.query.id is the id of the review
+  console.log(product.reviews[0].id.toString() !== req.query.id.toString())
   const reviews = product.reviews.filter(
     rev=> rev.id.toString() !== req.query.id.toString()
-  );
-  // For re-calculating the avg rating of product
+    );
   console.log(reviews)
+  // For re-calculating the avg rating of product
   let total = 0;
 
-  total = reviews.forEach((rev) => {
-    total += Number(rev.rating);
+  reviews.forEach((rev) => {
+    console.log(rev.rating)
+    total = total +  rev.rating;
   });
+  console.log(total)
+
   ratings = Number(total / reviews.length);
   numOfReviews = reviews.length
   if(reviews.length === 0){
   total = 0
   ratings = 0
   }
-
-  console.log(total,ratings)
   await Product.findByIdAndUpdate(
     req.query.productId,
     {

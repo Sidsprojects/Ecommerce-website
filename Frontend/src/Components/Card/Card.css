@@ -1,0 +1,58 @@
+.Card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* width: 300vw; */
+    height: 95%;
+    /* border: 2px solid red; */
+    gap: 2px;
+    padding: 13px 5px;
+    z-index: -2;
+    font-size: 11px;
+    font-family: "Roboto";
+    color: rgb(28, 28, 28);
+    text-decoration: none;
+    transition: all ease-in 0.2s;
+    z-index: 1  ;
+
+}
+.price{
+    color: red;
+    font-weight: 600;
+    font-size: 10px;
+}
+.Card:hover{
+    box-shadow: 0px 0px 5px rgb(55, 55, 55);
+    border-radius: 2px;
+}
+.Card img{
+    object-fit: cover;
+    height: 92%;
+    width: 23vw;
+    /* width: 500px; */
+}
+.description{
+    color: rgb(100, 99, 99);
+    width: 25vw;
+    letter-spacing: 1px;
+    margin-top: 13px;
+}
+.purchase-buttons{
+    display: flex;
+    gap: 13px;
+    padding-left: 12px;
+}
+.purchase-buttons button{
+    background-image: linear-gradient(to right, rgb(0, 0, 0) , rgb(51, 50, 50));
+    color: white;
+    padding: 8px;
+    border-radius: 6px;
+    /* border: 1px solid black; */
+    cursor: pointer;
+    box-shadow: 2px 5px 10px rgb(80, 79, 79);
+    transition: all 0.1s ease-in;
+}
+.purchase-buttons button:hover{
+    transform: scale(1.05);
+}

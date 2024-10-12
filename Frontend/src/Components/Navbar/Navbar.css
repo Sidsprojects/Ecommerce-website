@@ -1,0 +1,105 @@
+.Navbar{
+    display: flex;
+    width: 100vw;
+    height: 70px;
+    /* border: 2px solid red; */
+    background-image: linear-gradient(to right, rgb(0, 0, 0) , rgb(0, 0, 0));
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 3px 8px 8px rgb(145, 144, 144);
+    font-family: "Teko",sans-serif;
+    font-size: 25px;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+}
+.Navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+.Navbar ul li{
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+.Navbar ul li:hover{
+    color: rgb(139, 138, 138);
+}
+.armentia{
+    font-size: 30px;
+}
+.complete-logo{
+    width: 88px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    height: 85%;
+}
+.complete-logo img{
+    width: 88px;
+    height: 64px;
+}
+.interactions{
+    display: flex;
+    gap: 12px;
+}
+.interactions > Link{
+    cursor: pointer;
+    padding-top: 2px;
+}
+.products-display{
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 165px;
+    height: 250px;
+    left: 45.5vw;
+    background-color: rgb(57, 57, 57);
+    transition: all 0.2s ease-in;
+    /* border: 2px solid red; */
+    border-radius: 8px;
+    position: fixed;
+    color: white;
+    box-shadow: 3px 5px 5px rgb(145, 144, 144);
+}
+.products-display ul{
+    display: flex;
+    flex-direction: column;
+    list-style: decimal;
+    gap: 13px;
+}
+.products-display ul li{
+    cursor: pointer;
+}
+.products-display h1{
+    margin: 10px 0px;
+}
+.Underline{
+    width:43px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: 47px;
+    transition:all 0.2s ease-in;
+    border-radius: 5px;
+}
+.Underline-products{
+    width: 66px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: 47px;
+    transition: all 0.2s ease-in;
+    border-radius: 5px;
+}
+
+.speedDial{
+    position: fixed;
+    z-index: 11;
+    left: 90vw;
+    top: 6px;
+}
